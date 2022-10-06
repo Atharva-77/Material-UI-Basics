@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import MultTypography from './MultTypography';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-       hi
-      </header>
+     hh
+     <MultTypography/>
     </div>
   );
 }
