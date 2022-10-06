@@ -8,6 +8,8 @@ import createPalette from '@mui/material/styles/createPalette';
 // import { withStyles } from '@material-ui/core/styles';
 
 import { ThemeProvider } from '@mui/material';
+import InputFieldText from './InputTextField';
+import InputTextField from './InputTextField';
 
 const theme=createTheme({
     palette: {
@@ -33,7 +35,8 @@ function App() {
         <div className="App">
              Hello App.jsh
              <MultTypography/>
-              <ButtonUI />
+              {/* <ButtonUI /> */}
+              <InputTextField />
         
         </div>
 
