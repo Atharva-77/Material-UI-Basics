@@ -1,10 +1,11 @@
 import React from 'react';
 // import {Typography} from '@mui/material'
 import Typography from '@mui/material/Typography'
+import { Container } from '@mui/system';//Margin to left & right
 
-function MultTypography(props) {
+function MultTypography() {
     return (
-        <div>
+        <Container>
              In MultiTypography
 
             <Typography 
@@ -31,7 +32,7 @@ function MultTypography(props) {
             </Typography>
 
 
-        </div>
+        </Container>
     );
 }
 
