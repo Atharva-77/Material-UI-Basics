@@ -2,16 +2,35 @@ import React from 'react';
 // import {Typography} from '@mui/material'
 import Typography from '@mui/material/Typography'
 import { Container } from '@mui/system';//Margin to left & right
+import { makeStyles } from '@mui/styles';
+
+const useStyle=makeStyles({
+    btn:{
+        fontSize:60,
+        backgroundColor:'yellow',
+        color: 'purple',
+        '&:hover':
+        {
+            backgroundColor:'blue'
+        }
+    }
+})
 
 function MultTypography() {
+
+    const classes=useStyle();
+    
     return (
         <Container>
              In MultiTypography
 
             <Typography 
+                className={classes.btn}
                 variant="h1"
-                color="primary"
-                align="left">
+                // color="primary"
+                align="left"
+               
+                >
                  h1. Heading
             </Typography>
 
