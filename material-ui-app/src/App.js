@@ -33,7 +33,7 @@ function App() {
     <div>
 
    
-    {/* <ThemeProvider theme={theme} > */}
+    <ThemeProvider theme={theme} >
         {console.log("\ 1.THEME",theme)} 
        
         <div className="App">
@@ -44,7 +44,7 @@ function App() {
         
         </div>
 
-      {/* </ThemeProvider> */}
+      </ThemeProvider>
       </div>
   );
 }

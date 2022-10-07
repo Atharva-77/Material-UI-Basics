@@ -2,15 +2,17 @@ import React from 'react';
 import Typography from '@mui/material/Typography'
 import { Container } from '@mui/system';//Margin to left & right
 import { ThemeProvider, createTheme, makeStyles } from '@material-ui/core/styles';
-import { TextField } from '@material-ui/core';
+import { FormControlLabel, Radio, RadioGroup, TextField } from '@material-ui/core';
 import Button from '@mui/material/Button'
 import './InputTextField.css'
 import { useState } from 'react';
+import { FormControl, FormLabel } from '@mui/material';
 
 const useStyle=makeStyles({
     filed:{
         marginTop:20,
-        marginBottom:20,
+        marginBottom: 20,
+        display: 'block'
         // color: 'green',
         // '&:hover':
         // {
@@ -45,6 +47,9 @@ function InputTextField() {
     const [details, setDetails] = useState('');
     const [titleError, setTitleError] = useState(false);
     const [detailsError, setDetailsError] = useState(false);
+
+    const [category, setcategory] = useState('money');
+
     
     const handleSubmit = (e) =>
     {
@@ -60,7 +65,7 @@ function InputTextField() {
             setDetailsError(true);
 
         if (title && details)
-             console.log("handleSUBMIT ", title, details);
+             console.log("handleSUBMIT ", title, details,category);
             
     }
     
@@ -101,7 +106,20 @@ function InputTextField() {
                         // color="red"
                                >
                         SubmiT 
-                        </Button>
+                    </Button>
+                    
+
+                    <FormControl className={classes.filed}>
+
+                        <FormLabel>Select One category</FormLabel>
+                        <RadioGroup value={category} onChange={(e) => setcategory(e.target.value)}>
+                            <FormControlLabel value="money" control={<Radio />} label="Money" />
+                            <FormControlLabel value="car" control={<Radio />} label="Car1" />
+                            <FormControlLabel value="Airplane" control={<Radio />} label="Airplane1" />
+                            <FormControlLabel value="Ship" control={<Radio />} label="Ship1" />
+                        </RadioGroup>
+
+                    </FormControl>
                 </form>
          
 
