@@ -8,6 +8,7 @@ import './InputTextField.css'
 import { useState } from 'react';
 import { FormControl, FormLabel, Grid } from '@mui/material';
 import CardsComponent from './CardsComponent';
+import Sidebar from './Sidebar';
 
 const useStyle=makeStyles({
     filed:{
@@ -24,6 +25,9 @@ const useStyle=makeStyles({
     btn: {
         backgroundColor:"#fc1212"
         
+    },
+    root: {
+        display: 'flex'
     }
 })
 
@@ -71,7 +75,7 @@ function GridComponent() {
     }
     
     return (
-        <Container>
+        <div className={classes.root}>
             Grid
              <ThemeProvider  theme={theme1}>
 
@@ -124,6 +128,7 @@ function GridComponent() {
                     </FormControl>
                 </form> */}
 
+                <Sidebar />
                 <Grid container spacing={3}>
                     <Grid item xs={12} sm={6} md={3} l>
                         <CardsComponent title="Hope you are good" subHeading="Nice words"  details="Paragraphs are medium-sized units of writing, longer than sentences, but shorter than sections, chapters, or entire works. Because they connect the “small” ideas of individual sentences to a “bigger” idea, paragraph structure is essential to any writing for organization, flow, and comprehension. "/>
@@ -144,7 +149,7 @@ function GridComponent() {
          
 
           </ThemeProvider>
-         </Container>
+         </div>
     );
 }
 

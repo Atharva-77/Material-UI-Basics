@@ -11,6 +11,7 @@ import { ThemeProvider } from '@mui/material';
 import InputFieldText from './InputTextField';
 import InputTextField from './InputTextField';
 import GridComponent from './GridComponent';
+import Sidebar from './Sidebar';
 
 const theme=createTheme({
     palette: {
@@ -42,7 +43,8 @@ function App() {
              {/* <MultTypography/> */}
               {/* <ButtonUI /> */}
               {/* <InputTextField /> */}
-              <GridComponent />
+          <GridComponent />
+          {/* <Sidebar /> */}
         </div>
 
       </ThemeProvider>
