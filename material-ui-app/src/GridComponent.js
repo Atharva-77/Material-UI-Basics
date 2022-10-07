@@ -7,6 +7,7 @@ import Button from '@mui/material/Button'
 import './InputTextField.css'
 import { useState } from 'react';
 import { FormControl, FormLabel, Grid } from '@mui/material';
+import CardsComponent from './CardsComponent';
 
 const useStyle=makeStyles({
     filed:{
@@ -123,22 +124,21 @@ function GridComponent() {
                     </FormControl>
                 </form> */}
 
-                <Grid container>
+                <Grid container spacing={3}>
                     <Grid item xs={12} sm={6} md={3} l>
-                        <Paper>1</Paper>
-                        <Paper>11</Paper>
+                        <CardsComponent title="Hope you are good" subHeading="Nice words"  details="Paragraphs are medium-sized units of writing, longer than sentences, but shorter than sections, chapters, or entire works. Because they connect the “small” ideas of individual sentences to a “bigger” idea, paragraph structure is essential to any writing for organization, flow, and comprehension. "/>
                     </Grid>
 
                     <Grid item xs={12} sm={6} md={3} l>
-                        <Paper>2</Paper>
+                        <CardsComponent title="Best restro in market" subHeading="Food" details="Like other forms of writing, paragraphs follow a standard three-part structure with a beginning, middle, and end. These parts are the topic sentence, development and support, and conclusion. "/>
                     </Grid>
 
                     <Grid item xs={12} sm={6} md={3} l>
-                        <Paper>3</Paper>
+                        <CardsComponent title="Why react is used" subHeading="Tech" details="Development sentences elaborate and explain the idea with details too specific for"/>
                     </Grid>
                     <Grid item xs={12} sm={6} md={3} l>
 
-                        <Paper>4</Paper>
+                        <CardsComponent title="Great Quotes" subHeading="Nice words" details="Development sentences elaborate and explain the idea with details too specific for"/>
                     </Grid>
                 </Grid>
          
