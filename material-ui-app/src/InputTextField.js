@@ -4,6 +4,8 @@ import { Container } from '@mui/system';//Margin to left & right
 import { ThemeProvider, createTheme, makeStyles } from '@material-ui/core/styles';
 import { TextField } from '@material-ui/core';
 import Button from '@mui/material/Button'
+import './InputTextField.css'
+import { useState } from 'react';
 
 const useStyle=makeStyles({
     filed:{
@@ -32,36 +34,67 @@ const theme1=createTheme({
 })
 // const theme={};
 
+
+
 function InputTextField() {
 
     const classes=useStyle();
-    console.log("CLASSES",classes);
+    // console.log("CLASSES", classes);
+    
+    const [title, setTitle] = useState('');
+    const [details, setDetails] = useState('');
+    const [titleError, setTitleError] = useState(false);
+    const [detailsError, setDetailsError] = useState(false);
+    
+    const handleSubmit = (e) =>
+    {
+        e.preventDefault()
+        // console.log("handleSUBMIT ", title, details);
+        setTitleError(false);
+        setDetailsError(false);
+        
+        if (title == '')
+            setTitleError(true);
+        
+        if (details == '')
+            setDetailsError(true);
+
+        if (title && details)
+             console.log("handleSUBMIT ", title, details);
+            
+    }
     
     return (
         <Container>
              <ThemeProvider  theme={theme1}>
 
-                <form>
+                <form onSubmit={handleSubmit}>
                     <TextField 
                         className={classes.filed}
+                        onChange={(e)=>setTitle(e.target.value)}
                         label="Notes"
                         variant='outlined'
                         color="primary"
                         fullWidth
-                        required/>
+                        // required
+                        error={titleError}
+                    />
 
                     <TextField 
                         className={classes.filed}
+                        onChange={(e)=>setDetails(e.target.value)}
                         label="Details"
                         variant='outlined'
                         color="primary"
                         fullWidth
-                        required
+                        // required
+                        error={detailsError}
                         multiline
                         rows={4}
                     />
                     
                     <Button
+                        // className="button_color"
                         className={classes.btn}
                         type="submit" 
                         variant="contained" 

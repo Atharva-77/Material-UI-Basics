@@ -26,21 +26,26 @@ const theme=createTheme({
     //     }
     }
 })
+const theme1={}
 
 function App() {
   return (
-    <ThemeProvider theme={theme} >
+    <div>
+
+   
+    {/* <ThemeProvider theme={theme} > */}
         {console.log("\ 1.THEME",theme)} 
        
         <div className="App">
              Hello App.jsh
-             <MultTypography/>
+             {/* <MultTypography/> */}
               {/* <ButtonUI /> */}
               <InputTextField />
         
         </div>
 
-     </ThemeProvider>
+      {/* </ThemeProvider> */}
+      </div>
   );
 }
 
