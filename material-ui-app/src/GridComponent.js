@@ -9,25 +9,31 @@ import { useState } from 'react';
 import { FormControl, FormLabel, Grid } from '@mui/material';
 import CardsComponent from './CardsComponent';
 import Sidebar from './Sidebar';
+import TopBar from './TopBar';
 
-const useStyle=makeStyles({
-    filed:{
-        marginTop:20,
-        marginBottom: 20,
-        display: 'block'
-        // color: 'green',
-        // '&:hover':
-        // {
+const useStyle=makeStyles((theme)=>{
+    return {
+        filed: {
+            marginTop: 20,
+            marginBottom: 20,
+            display: 'block'
+            // color: 'green',
+            // '&:hover':
+            // {
             // backgroundColor:'green'
-        // }
-    },
-    // button color not changing ..see how to change
-    btn: {
-        backgroundColor:"#fc1212"
+            // }
+        },
+        // button color not changing ..see how to change
+        btn: {
+            backgroundColor: "#fc1212"
         
-    },
-    root: {
-        display: 'flex'
+        },
+        root: {
+            display: 'flex'
+        },
+        toolbar: {
+            paddingTop: 50
+        }
     }
 })
 
@@ -127,9 +133,9 @@ function GridComponent() {
 
                     </FormControl>
                 </form> */}
-
+                <TopBar />
                 <Sidebar />
-                <Grid container spacing={3}>
+                <Grid container spacing={3} className={classes.toolbar}>
                     <Grid item xs={12} sm={6} md={3} l>
                         <CardsComponent title="Hope you are good" subHeading="Nice words"  details="Paragraphs are medium-sized units of writing, longer than sentences, but shorter than sections, chapters, or entire works. Because they connect the “small” ideas of individual sentences to a “bigger” idea, paragraph structure is essential to any writing for organization, flow, and comprehension. "/>
                     </Grid>
