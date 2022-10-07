@@ -10,6 +10,7 @@ import createPalette from '@mui/material/styles/createPalette';
 import { ThemeProvider } from '@mui/material';
 import InputFieldText from './InputTextField';
 import InputTextField from './InputTextField';
+import GridComponent from './GridComponent';
 
 const theme=createTheme({
     palette: {
@@ -40,8 +41,8 @@ function App() {
              Hello App.jsh
              {/* <MultTypography/> */}
               {/* <ButtonUI /> */}
-              <InputTextField />
-        
+              {/* <InputTextField /> */}
+              <GridComponent />
         </div>
 
       </ThemeProvider>
